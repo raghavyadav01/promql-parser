@@ -19,7 +19,7 @@ fn main() {
         http_requests_total{
             environment=~"staging|testing|development",
             method!="GET"
-        } offset 5m
+        } [5m]
     "#;
 
     match parser::parse(promql) {
